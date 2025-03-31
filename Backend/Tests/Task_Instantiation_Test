@@ -1,0 +1,44 @@
+import unittest
+import NewsRequestsGen as nrg
+
+class Tests(unittest.TestCase):
+    def story_constructor_test(self):
+        test_articles = {
+            "status": 'ok', 'totalResults': 3, 'articles':[{
+                'source': {'id': None, 'name': 'Mediaite'}, 'author': 'SumGuy', 'title': 'A noteworthy event has occurred!',
+                'description': 'This event is of a nature discernible from mundane happenings!', 'description': 'Things are'
+                                                                                                                'definitely'
+                                                                                                                'out of the '
+                                                                                                                'ordinary',
+                'url': 'https://crazyocurrencesDAILY.com', 'urlToImage':'prettypicture.com', 'publishedAt': '2025-01-05',
+                'content': 'blahdiblahderbluh'},
+                {
+                    'source': {'id': None, 'name': 'DumpsterFire'}, 'author': 'Bill Newsworth',
+                    'title': '3 UNBELIEVABLE tips to turn your TV off WITHOUT the remote',
+                    'description': 'This event is of a nature discernible from mundane happenings!',
+                    'url': 'https://crazyocurrencesDAILY.com', 'urlToImage': 'prettypicture.com',
+                    'publishedAt': '2025-01-05',
+                    'content': 'blahdiblahderbluh'},
+                {
+                    'source': {'id': None, 'name': 'FliplTik'}, 'author': 'SumGuy',
+                    'title': 'A noteworthy event has occurred!',
+                    'description': 'This event is of a nature discernible from mundane happenings!',
+                    'description': 'Things are'
+                                   'definitely'
+                                   'out of the '
+                                   'ordinary',
+                    'url': 'https://crazyocurrencesDAILY.com', 'urlToImage': 'prettypicture.com',
+                    'publishedAt': '2025-01-05',
+                    'content': 'blahdiblahderbluh'}
+
+            ]
+        }
+        test_Story_obj = nrg.Story(test_articles)
+
+        test_Story_articles_key = test_Story_obj.articles.keys()
+
+        for number in range(0, 3):
+            self.assertTrue(test_Story_articles_key[number] == test_articles['articles'][number]['name'])
+
+
+
